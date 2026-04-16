@@ -7,13 +7,15 @@ namespace Domain.Entidades
 {
     public class User
     {
-        private Guid _id;
+        public Guid Id { get; private set; }
 
-        private ValueName _name;
+        public ValueName Name { get; private set; }
 
-        private ValueEmail _email;
+        public ValueEmail Email { get; private set; }
 
-        private ValuePassword _password;
+        public ValuePassword Password { get; private set; }
+
+
 
     }
 }

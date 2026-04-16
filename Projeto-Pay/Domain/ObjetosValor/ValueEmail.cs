@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.ObjetosValor
 {
-    internal class ValueEmail
+    public record ValueEmail
     {
     }
 }
