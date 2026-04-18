@@ -26,7 +26,7 @@ namespace Domain.ObjetosValor
                 return true;
             }
 
-            result = default; 
+            result = default!; 
             return false;
         }
 

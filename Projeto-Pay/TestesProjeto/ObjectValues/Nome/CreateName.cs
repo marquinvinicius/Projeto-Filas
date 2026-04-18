@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestesProjeto.Nome
+namespace TestesProjeto.ObjectValues.Nome
 {
     public class UnitTest
     {

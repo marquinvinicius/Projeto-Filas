@@ -34,7 +34,7 @@ namespace Domain.ObjetosValor
                 result = new ValueName(value);
                 return true;
             }
-            result = default;
+            result = default!;
             return false;
         }
 

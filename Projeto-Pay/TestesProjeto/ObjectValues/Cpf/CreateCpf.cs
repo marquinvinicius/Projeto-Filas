@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestesProjeto.Cpf
+namespace TestesProjeto.ObjectValues.Cpf
 {
     public class UnitTest
     {
