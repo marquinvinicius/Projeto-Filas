@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TestesProjeto.ObjectValues.Email
 {
-    public class CreateEmail
+    public class TestEmail
     {
         [Fact]
         public void TestCreateCorrect()

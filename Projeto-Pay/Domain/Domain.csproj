@@ -11,5 +11,8 @@
 			<_Parameter1>TestesProjeto</_Parameter1>
 		</AssemblyAttribute>
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="CSharpFunctionalExtensions" Version="3.7.0" />
+	</ItemGroup>
 
 </Project>

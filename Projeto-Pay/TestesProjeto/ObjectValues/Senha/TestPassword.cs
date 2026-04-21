@@ -7,7 +7,7 @@ using System.Text;
 
 namespace TestesProjeto.ObjectValues.Senha
 {
-    public class CreateSenha
+    public class TestPassword
     {
         [Fact]
         public void TestCreateCorrect()
