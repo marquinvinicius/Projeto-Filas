@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.ObjetosValor
 {
-    public record ValueName
+    public readonly record struct ValueName
     {
         public string Value { get;}
 
@@ -43,5 +43,6 @@ namespace Domain.ObjetosValor
 
         public override string ToString() => Value;
 
+        public ValueName() { }
     }
 }

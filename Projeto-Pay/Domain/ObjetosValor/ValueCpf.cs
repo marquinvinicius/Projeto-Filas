@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.ObjetosValor
 {
-    public  record ValueCpf
+    public readonly record struct ValueCpf
     {
         public string Value { get; }
  
@@ -71,7 +71,7 @@ namespace Domain.ObjetosValor
         public static explicit operator ValueCpf(string cpf) => new ValueCpf(cpf);
         public override string ToString() =>
         long.Parse(Value).ToString(@"000\.000\.000\-00");
-        protected ValueCpf() { }
+        public ValueCpf() { }
 
     }
 }

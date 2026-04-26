@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.ObjetosValor
 {
-    public record ValuePassword
+    public readonly record struct ValuePassword
     {
         public string Value { get; }
 
@@ -33,5 +33,7 @@ namespace Domain.ObjetosValor
             return false;
         }
         public override string ToString() => "*********";
+
+        public ValuePassword() { }
     }
 }
