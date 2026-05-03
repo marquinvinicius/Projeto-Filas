@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Domain.Entidades
 {
-    public record User
+    public class User
     {
         private User(Guid id, ValueName name, ValueEmail email, ValuePassword password)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Entidades
 {
-    public record Product
+    public class Product
     {
         public Guid Id { get; private set; }
         public ValueCount Count { get; private set; }
