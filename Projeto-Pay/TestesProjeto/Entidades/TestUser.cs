@@ -14,8 +14,9 @@ namespace TestesProjeto.Entidades
             string name = "Jubilin";
             string email = "jubilin@gmail.com";
             string password = "Senh@123";
+            string cpf = "183.661.607-42";
 
-            bool result = User.Create(name, email, password, out var user, out var errorMessage);
+            bool result = User.Create(name, email, password, cpf, out var user, out var errorMessage);
 
             result.Should().BeTrue();
             user.Should().NotBeNull();
@@ -25,11 +26,14 @@ namespace TestesProjeto.Entidades
         }
 
         [Theory]
-        [InlineData("", "email@valido.com", "senha123", "Nome inválido.")]
+        [InlineData("", "email@valido.com", "senha123", "183.661.607-42", "Nome inválido.")]
+        [InlineData("Nome Válido", "emailinvalido", "senha123", "183.661.607-42", "Email inválido.")]
+        [InlineData("Nome Válido", "email@valido.com", "", "183.661.607-42", "Senha inválida.")]
+        [InlineData("Nome Válido", "email@valido.com", "senha123", "", "CPF inválido.")]
         public void Create_ComDadosInvalidos_DeveRetornarFalseEMensagemDeErro(
-        string name, string email, string password, string expectedError)
+            string name, string email, string password, string cpf, string expectedError)
         {
-            var result = User.Create(name, email, password, out User user, out string errorMessage);
+            var result = User.Create(name, email, password, cpf, out User user, out string errorMessage);
 
             result.Should().BeFalse();
             user.Should().BeNull();

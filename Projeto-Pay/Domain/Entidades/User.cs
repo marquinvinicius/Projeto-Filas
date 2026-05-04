@@ -8,12 +8,13 @@ namespace Domain.Entidades
 {
     public class User
     {
-        private User(Guid id, ValueName name, ValueEmail email, ValuePassword password)
+        private User(Guid id, ValueName name, ValueEmail email, ValuePassword password, ValueCpf cpf)
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
+            Cpf = cpf;
         }
 
         public Guid Id { get; private set; }
@@ -24,6 +25,7 @@ namespace Domain.Entidades
 
         public ValuePassword Password { get; private set; }
 
+        public ValueCpf Cpf { get; private set; }
         public void UpdateName(ValueName name)
         {
             Name = name;
@@ -38,7 +40,7 @@ namespace Domain.Entidades
         }
 
         public static bool Create(string name, string email, string password,
-            out User user, out string errorMessage)
+            string cpf,out User user, out string errorMessage)
         {
             user = null;
             errorMessage = string.Empty;
@@ -57,7 +59,12 @@ namespace Domain.Entidades
                 errorMessage = "Senha inválida.";
                 return false;
             }
-            user = new User(Guid.NewGuid(), parsedName, parsedEmail, parsedPassword);
+            if (!ValueCpf.TryParse(cpf, out var parsedCpf))
+            {
+                errorMessage = "CPF inválido.";
+                return false;
+            }
+            user = new User(Guid.NewGuid(), parsedName, parsedEmail, parsedPassword, parsedCpf);
             return true;
         }
     }
